@@ -10,5 +10,5 @@ To use it you need ubuntu, docker installed on it
 * check if you have installed docker 
     * run docker --version
     * if not, install using this [docs](https://docs.docker.com/engine/install/)    
-* If you have, than run ./run.sh
+* If you have, then run ./run.sh
 * Go to [site](http://localhost:8080)
