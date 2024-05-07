@@ -10,15 +10,11 @@ create table if not exists `users`(
     PRIMARY KEY (id)
 );";
 
-    $result = mysqli_query($db, $query); // Выполнение запроса
-
-    var_dump($result);
+    $result = mysqli_query($db, $query);
 
     $query = "INSERT INTO `users` (name) VALUES ('Mikita'), ('Dasha'), ('Vanya');";
 
-    $result = mysqli_query($db, $query); // Execute the query
-
-    var_dump($result);
+    $result = mysqli_query($db, $query);
 
     mysqli_close($db);
 } catch (mysqli_sql_exception $e) {
