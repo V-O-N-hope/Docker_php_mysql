@@ -1,13 +1,9 @@
 <?php
 
-namespace Exceptions\Database_Errors;
-
-use Exceptions\ErrorsCode;
-
-class ConnectionError extends \Exception
+class ConnectionError extends Exception
 {
-    public function __construct($message)
+    public function __construct($message, $code = 0)
     {
-        parent::__construct($message, ErrorsCode::FAILED_DATABASE_CONNECTION, null);
+        parent::__construct($message, $code, null);
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-namespace Exceptions;
-
 enum ErrorsCode
 {
     case INVALID_ENTITY_PARAM;

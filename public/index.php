@@ -1,18 +1,17 @@
 
 <?php
 
+include_once ("../app/Exceptions/Database_Errors/ConnectionError.php");
+
+/**
+ * @throws ConnectionError
+ */
 try {
-    $db = mysqli_connect('mysql', 'task_1', 'task_1', 'task_1');
+    $db = new PDO('mysql:host=mysql;dbname=task_1', 'task_1', 'task_1');
 
-    $query = "SELECT * FROM users;";
-
-    $result = mysqli_query($db, $query);
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        var_dump($row);
-    }
-
-    mysqli_close($db);
-} catch (mysqli_sql_exception $e) {
-    exit($e->getMessage());
+    echo "We are in";
+}catch (PDOException $e){
+    throw new ConnectionError("Could not connect to database. Reason: " . $e->getMessage() , $e->getCode());
 }
+
+$db = null;
